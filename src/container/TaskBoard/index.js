@@ -31,14 +31,19 @@ const listTask = [
 ];
 
 class TaskBoard extends Component {
-  state = {
-    open: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
+
   handleClose = () => {
     this.setState({
       open: false,
     });
   };
+
   renderBoard = () => {
     // let {classes} = this.props;
     let xhtml = null;
@@ -49,28 +54,27 @@ class TaskBoard extends Component {
             return task.status === status.value;
           });
           return (
-            <TaskList
-              key={status.value}
-              status={status}
-              tasks={filterTask}
-            ></TaskList>
+            <TaskList key={status.value} status={status} tasks={filterTask} />
           );
         })}
       </Grid>
     );
     return xhtml;
   };
+
   renderForm = () => {
     const { open } = this.state;
     let xhtml = null;
-    xhtml = <TaskForm open={open} onCloseForm={this.handleClose}></TaskForm>;
+    xhtml = <TaskForm open={open} onCloseForm={this.handleClose} />;
     return xhtml;
   };
+
   openForm = () => {
     this.setState({
       open: true,
     });
   };
+
   render() {
     const { classes } = this.props;
     return (
@@ -81,7 +85,8 @@ class TaskBoard extends Component {
           variant="contained"
           color="primary"
         >
-          <AddIcon></AddIcon> Add New Job
+          <AddIcon />
+          Add New Job
         </Button>
         {this.renderBoard()}
         {this.renderForm()}

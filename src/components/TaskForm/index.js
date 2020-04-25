@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/styles';
 
 class TaskForm extends Component {
   render() {
-    let { open, classes, onCloseForm } = this.props;
+    const { open, classes, onCloseForm } = this.props;
     return (
       <Dialog
         open={open}

@@ -12,8 +12,8 @@ import styles from './styles';
 
 class TaskItem extends Component {
   render() {
-    let { classes, task, status } = this.props;
-    let { title, description } = task;
+    const { classes, task, status } = this.props;
+    const { title, description } = task;
     return (
       <Card className={classes.card}>
         <CardContent>
@@ -28,7 +28,7 @@ class TaskItem extends Component {
           <div>{description}</div>
         </CardContent>
         <CardActions className={classes.cardActions}>
-          <Button size="small"></Button>
+          <Button size="small" />
           <Fab color="primary" aria-label="add" size="small">
             <Icon>edit_icon</Icon>
           </Fab>

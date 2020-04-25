@@ -13,7 +13,7 @@ import theme from '../commons/Theme/index';
 class App extends Component {
   render() {
     console.log(this.props);
-    let { classes } = this.props;
+    const { classes } = this.props;
     return (
       // <div className="App">
       //     <h1>Hello redux-saga</h1>
@@ -25,7 +25,7 @@ class App extends Component {
       //     </div>
       // </div>
       <ThemeProvider theme={theme}>
-        <TaskBoard></TaskBoard>
+        <TaskBoard />
       </ThemeProvider>
     );
   }

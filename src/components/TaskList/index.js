@@ -7,7 +7,7 @@ import TaskItem from '../TaskItem/index';
 
 class TaskList extends Component {
   render() {
-    let { classes, status, tasks } = this.props;
+    const { classes, status, tasks } = this.props;
     return (
       <Grid item md={4} xs={12}>
         <Box mb={1} mt={1}>
@@ -15,9 +15,7 @@ class TaskList extends Component {
         </Box>
         <div className={classes.wapperListTask}>
           {tasks.map((task, index) => {
-            return (
-              <TaskItem key={task.id} task={task} status={status}></TaskItem>
-            );
+            return <TaskItem key={task.id} task={task} status={status} />;
           })}
         </div>
       </Grid>
